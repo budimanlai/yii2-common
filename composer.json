@@ -1,0 +1,22 @@
+{
+    "name": "budimanlai/helpers",
+    "type": "yii2-extension",
+    "description": "Yii2 Helpers",
+    "keywords": ["yii2", "string","string helper","helper"],
+    "homepage": "http://www.budimanlai.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Budiman Lai",
+            "email": "budiman.lai@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "budimanlai\\yii2-helpers": ""
+        }
+    }
+}
