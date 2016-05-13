@@ -1,13 +1,9 @@
 {
-    "name": "budimanlai/helpers",
-    "type": "yii2-extension",
+    "name": "budimanlai/yii2-helpers",
     "description": "Yii2 Helpers",
-    "keywords": ["yii2", "string","string helper","helper"],
-    "homepage": "http://www.budimanlai.com",
-    "license": "MIT",
     "authors": [
         {
-            "name": "Budiman Lai",
+            "name": "budiman",
             "email": "budiman.lai@gmail.com"
         }
     ],
