@@ -7,4 +7,7 @@ class StringHelper {
         echo "<pre>" . print_r($data, true) . "</pre>";
     }
     
+    public function test() {
+        echo "Hello World";
+    }
 }
