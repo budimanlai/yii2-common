@@ -1,6 +1,6 @@
 {
     "name": "budimanlai/yii2-helpers",
-    "description": "Yii2 Helpers",
+    "description": "Yii2 Helpers. DateHelper, FileHelper, Html, ModelHelper, NumberHelper, StringHelper, UUID, URL",
     "authors": [
         {
             "name": "budiman",
