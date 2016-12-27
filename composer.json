@@ -12,7 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "budimanlai\\yii2-helpers": ""
+            "budimanlai\\yii2-helpers\\": ""
         }
     }
 }
