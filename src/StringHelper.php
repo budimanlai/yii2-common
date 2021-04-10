@@ -3,6 +3,26 @@ namespace budimanlai\helpers;
 
 class StringHelper extends \yii\helpers\StringHelper {
     
+    /**
+     * Normalize Indonesia phone number
+     * 
+     * @param string $number
+     * @return string
+     */
+    public static function normalizePhoneNumber($number) {
+        $number = str_replace([" ", "-", "+"], "", $number);
+
+        if (substr($number, 0, 5) == "62628") {
+            return "62" . substr($number, 4, strlen($number));
+        } else if (substr($number, 0, 2) == "62") {
+            return $number;
+        } else if (substr($number, 0, 1) == "0") {
+            return "62" . substr($number, 1, strlen($number));
+        } else {
+            return "-".$number;
+        }
+    }
+    
     public function pre_dump($data) {
         echo "<pre>" . print_r($data, true) . "</pre>";
     }

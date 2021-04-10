@@ -14,7 +14,44 @@ define('STRING_WEEK', "1 week ago");
 define('STRING_WEEKS', "%d weeks ago");
 define('DATE_FORMAT', "m-d-Y");
 
+use DateTime;
+
 class DateHelper {
+    
+    /**
+     * Convert seconds to hh:mm:ss
+     * 
+     * @param int $seconds
+     */
+    public static function secondsToTimeString($seconds) {
+        $hours = floor($seconds / 3600);
+        $mins = floor($seconds / 60 % 60);
+        $secs = floor($seconds % 60);
+        
+        return sprintf('%02d:%02d:%02d', $hours, $mins, $secs);
+    }
+    
+    /**
+     * Ambil tanggal di hari senin dan tanggal di hari minggu pada minggu tertentu
+     * Contoh: 
+     * // ambil tanggal hari senin dan minggu di minggu kedua tahun 2021
+     * $result = DateHelper::getStartAndEndDate(2, 2021);
+     * [ 
+     *      "week_start": "2021-01-04",
+     *      "week_end": "2021-01-10"
+     * ]
+     * 
+     * @param int $week
+     * @param int $year
+     * @return array
+     */
+    public static function getStartAndEndDate($week, $year) {
+        $dto = new DateTime();
+        $ret['week_start'] = $dto->setISODate($year, $week)->format('Y-m-d');
+        $ret['week_end'] = $dto->modify('+6 days')->format('Y-m-d');
+        return $ret;
+    }
+    
     /**
     * Number of days in a month
     *
