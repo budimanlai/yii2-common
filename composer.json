@@ -1,13 +1,18 @@
 {
     "name": "budimanlai/yii2-helpers",
     "description": "Yii2 Helpers. DateHelper, FileHelper, Html, ModelHelper, NumberHelper, StringHelper, UUID, URL",
+    "keywords": ["yii2", "date", "file", "helper", "html", "model", "number", "string", "uuid", "url", "password"],
+    "support": {
+        "source": "https://github.com/budimanlai/yii2-helpers"
+    },
     "authors": [
         {
-            "name": "budiman",
-            "email": "budiman.lai@gmail.com"
+            "name": "Budiman Lai",
+            "email": "budiman.lai@gmail.com",
+            "website": "https://budimanlai.com"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": ">=2.0.6"
