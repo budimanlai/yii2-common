@@ -1,5 +1,6 @@
 {
     "name": "budimanlai/yii2-helpers",
+    "type": "yii2-extension",
     "description": "Yii2 Helpers. DateHelper, FileHelper, Html, ModelHelper, NumberHelper, StringHelper, UUID, URL",
     "keywords": ["yii2", "date", "file", "helper", "html", "model", "number", "string", "uuid", "url", "password"],
     "support": {
@@ -16,5 +17,10 @@
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": ">=2.0.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "budimanlai\\helpers\\": "src"
+        }
     }
 }
