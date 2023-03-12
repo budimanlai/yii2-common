@@ -1,8 +1,14 @@
 <?php
+/**
+ * @class: DateHelper
+ * @author: Budiman Lai <budiman.lai@gmail.com>
+ * 
+ * Class ini berisi fungsi-fungsi manipulasi waktu/date
+ */
 namespace budimanlai\helpers;
 
 use yii\helpers\ArrayHelper as YiiArrayHelper;
-use yii\base\InvalidArgumentException;
+use yii\base\BadRequestException;
 
 class ArrayHelper extends YiiArrayHelper {
     
@@ -10,12 +16,12 @@ class ArrayHelper extends YiiArrayHelper {
      * Untuk check field $params[key] apakah kosong atau tidak
      * 
      * @param any | array $fields field yang harus ada value nya
-     * @throws \yii\base\InvalidArgumentException
+     * @throws \yii\base\BadRequestException
      */
-    public static function requiredField($params, $fields) {
+    public static function requiredField($params, $fields, $error_msg = "Invalid paramenters") {
         if (!is_array($fields)) { $fields[] = $fields; }
         foreach($fields as $key) {
-            if (empty($params[$key])) { throw new InvalidArgumentException("Invalid argument"); }
+            if (empty($params[$key])) { throw new BadRequestException($error_msg); }
         }
     }
     

@@ -3,8 +3,15 @@ namespace budimanlai\helpers;
 
 use Yii;
 
-class QueryHelper {
+class Query {
     
+    /**
+     * Execute SQL query
+     * 
+     * @param string $sql
+     * @param array $params
+     * @return int
+     */
     public static function execute($sql, $params = []) {
         return Yii::$app->db->createCommand($sql, $params)->execute();
     }
