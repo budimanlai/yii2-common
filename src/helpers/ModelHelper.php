@@ -18,4 +18,19 @@ class ModelHelper {
         }
         return $result;
     }
+    
+    /**
+     * Get model error message
+     * 
+     * @param \yii\base\Model $model
+     * @return string
+     */
+    public static function getErrorModel($model) {
+        $msg = [];
+        foreach ($model->getFirstErrors() as $message) {
+            $msg[] = $message;
+        }
+        
+        return implode(", ", $msg);
+    }
 }

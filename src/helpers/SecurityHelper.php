@@ -3,7 +3,7 @@ namespace budimanlai\helpers;
 
 use yii\base\Security as YiiSecurity;
 
-class Security extends YiiSecurity {
+class SecurityHelper extends YiiSecurity {
     
     /**
      * Convert plain string of password to SHA512 hash with Base64 for more secure

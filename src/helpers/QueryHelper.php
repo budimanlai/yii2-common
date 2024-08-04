@@ -3,7 +3,40 @@ namespace budimanlai\helpers;
 
 use Yii;
 
-class Query {
+class QueryHelper {
+    
+    /**
+     * Update data
+     * 
+     * @param string $table
+     * @param array $columns
+     * @param array | string $condition
+     * @param array $params
+     */
+    public static function update($table, $columns, $condition, $params = []) {
+        Yii::$app->db->createCommand()->update($table, $columns, $condition, $params)->execute();
+    }
+    
+    /**
+     * Insert data
+     * 
+     * @param string $table
+     * @param array $columns
+     */
+    public static function insert($table, $columns) {
+        Yii::$app->db->createCommand()->insert($table, $columns)->execute();
+    }
+    
+    /*
+     * Select one record from table and lock the row from updating or select from other query
+     * 
+     * @param string $sql
+     * @param array $params
+     * @return null | array
+     */
+    public static function queryForUpdate($sql, $params = []) {
+        return self::queryOne("{$sql} LIMIT 1 FOR UPDATE", $params);
+    }
     
     /**
      * Execute SQL query
@@ -39,7 +72,7 @@ class Query {
     }
     
     /**
-     * 
+     * Get first column in first row
      * 
      * @param string $sql
      * @param array $params

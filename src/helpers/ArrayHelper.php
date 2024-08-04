@@ -38,7 +38,7 @@ class ArrayHelper extends YiiArrayHelper {
      * @param array $fields
      * @return array
      */
-    public static function safeField($params, $fields) {
+    public static function onlyField($params, $fields) {
         $result = [];
         if (!is_array($fields)) { $fields[] = $fields; }
         foreach($fields as $row) {

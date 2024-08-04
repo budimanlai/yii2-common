@@ -6,6 +6,23 @@ use budimanlai\helpers\Html;
 class FileHelper extends \yii\helpers\FileHelper{
     
     /**
+     * Menyimpan log kedalam file
+     * 
+     * @param String $app       alias app yii2. misalnya @backend, @app, @frontend, etc
+     * @param String $file      nama log file
+     * @param String $content   content log yang ingin disimpan di dalam file
+     * @return string
+     */
+    public static function writeLog($app, $file, $content) {
+        $path = Yii::getAlias($app . "/runtime/") . $file;
+        
+        $fo = fopen($path, "a");
+        fwrite($fo, "[" . date("Y-m-d H:i:s") . "] " . $content . "\n");
+        fclose($fo);
+        return $path;
+    }
+    
+    /**
      * Baca isi sebuah file
      * 
      * @param string $filename

@@ -19,7 +19,7 @@ class StringHelper extends \yii\helpers\StringHelper {
         } else if (substr($number, 0, 1) == "0") {
             return "62" . substr($number, 1, strlen($number));
         } else {
-            return "-".$number;
+            return $number;
         }
     }
     
